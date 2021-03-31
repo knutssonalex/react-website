@@ -35,7 +35,14 @@ const Projekt = () => {
 //   const [props, set, stop] = useSpring(() => ({ opacity: 1 }))
 
   const [position, setPosition] = useState(0)
-  const props = useSpring({ margin: position })
+  const props = useSpring({
+    margin: 0,
+    transform: `translate(${0}px, ${position}px)`,
+    config: {
+      tension: 200,
+      friction: 5
+    }
+  })
   // const blockRef = useLayoutEffect();
   // let divStyle = {tranform: `translate(0, ${positionState*100}px)`}
   /*
@@ -61,7 +68,8 @@ const Projekt = () => {
       {/* <AnimatedBox style={{ transform: [{ translateY: props.position }] }} /> */}
       {/* <AnimatedBox style={props} /> */}
       {/* <animated.div style={props}>fooo</animated.div> */}
-      <animated.div style={props}>i will fade</animated.div>
+      <animated.div style={props}>i will fade
+      </animated.div>
       <ScrollHandler speed={0.2} onScroll={updatePosition} />
     </Container>
   )
