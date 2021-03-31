@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react'
-import { useSpring, animated, config, to } from 'react-spring'
+// import { useSpring, animated, config, to } from 'react-spring'
+import { useSpring, animated } from 'react-spring'
 // import { animated, useSpring } from 'react-spring/hooks.js'
 import React, { useState, useEffect, useLayoutEffect } from 'react'
 import '../../App.css'
@@ -28,11 +29,13 @@ document.body.addEventListener('wheel', (e) => {
 
 const Projekt = () => {
   // const [positionState, setPositionState] = useState(0)
-  const [{ position }, setAnimationState] = useSpring(() => ({
-    position: 0
-  }))
-  const [props, set, stop] = useSpring(() => ({ opacity: 1 }))
+//   const [{ position }, setAnimationState] = useSpring(() => ({
+//     position: 0
+//   }))
+//   const [props, set, stop] = useSpring(() => ({ opacity: 1 }))
 
+  const [position, setPosition] = useState(0)
+  const props = useSpring({ margin: position })
   // const blockRef = useLayoutEffect();
   // let divStyle = {tranform: `translate(0, ${positionState*100}px)`}
   /*
@@ -49,17 +52,18 @@ const Projekt = () => {
     console.log(pos)
     // setPositionState(pos)
     // setAnimationState({ position: pos })
-    set({ opacity: Math.random() })
+    //     set({ opacity: Math.random() })
+    setPosition(pos)
   }
 
   return (
-  // <animated.div style={fadeStyles} >
     <Container>
-      {/* <AnimatedBox style={{ transform: [{ translateY: position }] }} /> */}
-      <AnimatedBox style={props} />
+      {/* <AnimatedBox style={{ transform: [{ translateY: props.position }] }} /> */}
+      {/* <AnimatedBox style={props} /> */}
+      {/* <animated.div style={props}>fooo</animated.div> */}
+      <animated.div style={props}>i will fade</animated.div>
       <ScrollHandler speed={0.2} onScroll={updatePosition} />
     </Container>
-  // </animated.div>
   )
 }
 
