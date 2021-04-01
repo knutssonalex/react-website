@@ -21,3 +21,15 @@
      overflow: hidden;
      height: 100vh;
    }
+
+   .n {
+     position: absolute;
+     top: 170px;
+     width: 200px;
+     height: 10px;
+     background-color: black;
+   }
+   .n1{top: 270px;}
+   .n2{top: 370px;}
+   .n3{top: 470px;}
+   .n4{top: 570px;}

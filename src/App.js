@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Navbar from './components/Navbar';
-import Projekt from './components/pages/projekt';
+import Navbar from './components/Navbar'
+import Projekt from './components/pages/projekt'
 
 function App () {
   return (
@@ -14,6 +14,11 @@ function App () {
             <Route path='/projekt' component={Projekt} />
           </Switch>
         </Navbar>
+        <div className='n' />
+        <div className='n n1' />
+        <div className='n n2' />
+        <div className='n n3' />
+        <div className='n n4' />
         <Projekt />
 
       </Router>

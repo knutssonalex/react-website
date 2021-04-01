@@ -8,15 +8,15 @@ const Container = styled.div`
      overflow-y: scroll;
 `
 const Content = styled.div`
-     height: 400vh;
+     height: 100vh;
 `
-const ScrollHandler = ({ speed = 1, onScroll }) => {
-  const [scrollValue, setScrollValue] = useState(0)
+
+const ScrollHandler = ({ speedFactor = 0.02, onScroll }) => {
+  const [scrollValue, setScrollValue] = useState(1)
   const handleScroll = (event) => {
-    const newVal = scrollValue + event.deltaY * speed
-    setScrollValue(newVal)
-    onScroll(newVal)
-    // console.log(newVal)
+    const speed = event.deltaY * speedFactor
+    setScrollValue(speed * 100)
+    onScroll(speed * 100)
   }
 
   return (
