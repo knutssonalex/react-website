@@ -14,11 +14,7 @@ function App () {
             <Route path='/projekt' component={Projekt} />
           </Switch>
         </Navbar>
-        <div className='n' />
-        <div className='n n1' />
-        <div className='n n2' />
-        <div className='n n3' />
-        <div className='n n4' />
+
         <Projekt />
 
       </Router>
